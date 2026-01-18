@@ -1,0 +1,193 @@
+@charset "UTF-8";
+
+*{
+  margin:0px;
+  padding:0px;
+  text-align: center;
+}
+
+body {
+  background-color: #27b7d7;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+header,main,footer {
+  width: 1000px;
+  margin: auto;
+}
+
+/* 見出し */
+h1, h2, h3,h4 {
+  margin-top: 0;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.1rem;
+  padding-bottom: 5px;
+  color: #27b7d7;
+}
+
+/* ===== ヘッダー・メニューバー ===== */
+header {
+  background-color: #f7f3e9;
+  height: 150px;
+}
+
+header h1 {
+  margin: 0;
+  padding-top: 90px;
+  padding-left: 50px;
+  font-size: 35px;
+  font-weight: normal;
+}
+
+#menu {
+  height: 76px;
+  clear: both;
+  background-color: #f7f3e9;
+}
+
+#menu ul {
+  list-style: none;
+  height: 67px;
+  border-top: 2px solid #ffffff;
+}
+
+#menu li {
+  float: left;
+  height: 35px;
+  padding: 15px 20px 0;
+  background-color: #f7f3e9;
+}
+
+#menu li.active {
+  background-color: #27b7d7;
+}
+
+#menu a {
+  font-size: 16px;
+  color: #333333;
+  text-decoration: none;
+  letter-spacing: -1px;
+}
+
+#menu .active a {
+  border-bottom: 2px solid #ffffff;
+}
+
+/* ===== 上段 ===== */
+
+.top,
+.movie,
+.island-overview,
+.spot {
+  width: 950px;
+  padding: 10px;
+  background-color: #27b7d7;
+}
+
+.top {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.text-box, .gallery {
+  flex: 1;
+  background-color: #f7f3e9;
+  margin: 10px;
+  padding: 10px;
+}
+
+.text-box p {
+  font-size: 0.95rem;
+}
+
+.gallery{
+  list-style: none;
+}
+.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+small{
+  color: #3333336b;
+}
+
+/* ===== 動画 ===== */
+.movie {
+  display: block;
+  text-align: center;
+  padding: 10px;
+}
+
+.movie h2 {
+  margin-bottom: 20px;
+}
+
+
+/* ===== 内容 ===== */
+.island-overview,
+.spot,
+.images {
+  display: block;
+  background: #ffffff;
+  margin-top: 10px;
+}
+
+.lead {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1rem;
+}
+
+.item {
+  display: block;
+  background: #f7f3e9;
+  margin-top: 15px;
+  padding: 20px;
+}
+
+.item p {
+  font-size: 0.9rem;
+}
+
+#cover {
+  background: rgba(0,0,0,0.7);
+  display: none;
+  z-index: 999;
+}
+
+#largeImg {
+  display: none;
+  z-index: 1000;
+}
+
+/* ===== フッター ===== */
+#footer {
+  background-color: #27b7d7;
+  color: #ffffff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.8rem;
+}
+
+#footer .credit {
+  display: block;
+  margin-top: 6px;
+}

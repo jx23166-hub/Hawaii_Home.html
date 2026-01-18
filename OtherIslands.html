@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <Title>Other Islands</Title>
+    
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+    </head>
+
+    <body id="oahu">
+        <header>
+            <h1>Hawaii Log</h1>
+            <div class="container" id="menu">
+                <ul>
+                <li><a href="Hawaii_Home.html">HOME</a></li>
+                <li><a href="Oahu.html">Oahu</a></li>
+                <li><a href="Bigisland.html">BigIsland</a></li>
+                <li class="active"><a href="OtherIslands.html">Other Island</a></li>
+                <li><a href="Gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <main>
+            <section class="top">
+                <div class="text-box">
+                    <h2>Other Islands</h2>
+                    <h4>ほかの島々</h4>
+                    <p>
+                        <br>
+                        ハワイにはオアフ島、ハワイ島以外にも魅力的な島があります。<br>
+                        <br>
+                        このページでは、残り4つの島の魅力を紹介します。
+                    </p>
+                </div>
+                <div class="gallery">
+                    <a href="image/header_2_big.JPEG">
+                        <img src="image/header_2.JPEG" alt="ハワイの風景2">
+                    </a>
+                </div>
+            </section>
+
+            <section class="island">
+                <div class="overview-grid">
+                    <div class="item" id="maui">
+                    <h3>マウイ島</h3>
+                    <p>
+                    マウイ島は、ハワイ島に次いで2番目に大きな島で、歴史と自然の魅力をあわせ持つ島です。<br>
+                    かつて王朝の拠点や産業の中心として栄え、現在もラハイナなどにその名残を見ることができます。<br>
+                    島内にはカアナパリやワイレアなどのリゾートエリアが広がり、雄大なハレアカラ火山や美しい自然、ホエールウォッチングなど多彩なアクティビティを楽しめます。<br>
+                    <br>
+                    島の色はピンク、島の花はロケラニというピンクのバラで、やさしく華やかな雰囲気を持つ島です。
+                    </p>
+                    </div>
+
+                    <div class="item" id="kauai">
+                    <h3>カウアイ島</h3>
+                    <p>
+                    カウアイ島は、ハワイ主要6島の中で最も北に位置し、地形学的に最も古い島として知られています。<br>
+                    緑が深いことからガーデンアイランドと呼ばれ、長い年月をかけて浸食されたナパリ・コーストやワイメア渓谷などの壮大な自然が創り出した美しく壮大な景観や、ハワイの原風景が広がっています。<br>
+                    また、遺跡や歴史的建造物が多数あり、神話も多く語り継がれているため、ハワイの歴史、文化の発祥地とも言われています。<br>
+                    <br>
+                    島の色は紫、島の花はモキハナで、深く豊かな自然を象徴しています。
+                    </p>
+                    </div>
+
+                    <div class="item" id="lanai">
+                    <h3>ラナイ島</h3>
+                    <p>
+                    ラナイ島は、モロカイ島の南東に位置する小さな島で、かつては「パイナップル・アイランド」と呼ばれるほどパイナップル栽培が盛んでした。<br>
+                    現在は栽培は行われておらず、島の中心産業は観光業へと移っています。<br>
+                    島内には信号が一つもなく、舗装された道路も限られており、静かで手つかずの自然が広がっています。<br>
+                    ラナイ島はハワイの島の中で最も人口が少ない島でもあり、高級リゾートを中心としたプライベート感あふれる滞在が魅力です。<br>
+                    <br>
+                    島の色はオレンジ、島の花はカウナオアです。
+                    </p>
+                    </div>
+
+                    <div class="item" id="molokai">
+                    <h3>モロカイ島</h3>
+                    <p>
+                    モロカイ島は、先住民の文化が今も深く根付く島で、手つかずの自然と美しいビーチが広がっています。<br>
+                    ハワイで5番目に大きい島で、北東海岸には世界最大級の岸壁、南部沖合にはハワイ最長のサンゴ礁が広がるなど、雄大な自然環境が特徴です。<br>
+                    ネイティブハワイアンの比率が高く、観光地化されすぎていない、昔ながらのハワイの姿を感じられるのも魅力です。<br>
+                    <br>
+                    島の色は緑、島の花はククイの花です。
+                    </p>
+                    </div>
+                </div>
+            </section>
+            <div id="cover"></div>
+            <div id="largeImg"><img width="550" src="image/header_2_big.JPEG"></div>
+        </main>
+
+        <script src="jquery.js"></script>
+        <script>
+        /* 画像拡大 */
+        $('.gallery a').on('click', function(e){
+        e.preventDefault();
+
+        $('#cover').css({
+            position:'fixed',
+            left:0, top:0,
+            width:'100%', height:'100%'
+        }).show();
+
+        $('#largeImg').css({
+            position:'fixed',
+            left:'50%',
+            top:'50%',
+            transform:'translate(-50%, -50%)'
+        }).html('<img src="'+$(this).attr('href')+'" width="600">')
+            .fadeIn('slow');
+        });
+
+        /* 閉じる */
+        $('#cover, #largeImg').on('click', function(){
+        $('#largeImg').fadeOut().empty();
+        $('#cover').hide();
+        });
+        </script>
+        
+        <footer class="container" id="footer">
+            <small>&copy; 2025 About Hawaii</small>
+        </footer>
+    </body>
+</html>

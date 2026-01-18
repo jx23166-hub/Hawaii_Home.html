@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8">
+        <Title>Gallery</Title>
+
+        <link rel="stylesheet" type="text/css" href="mystyle.css">
+    </head>
+
+    <body id="gallery">
+        <header>
+            <h1>Hawaii Log</h1>
+            <div class="container" id="menu">
+                <ul>
+                <li><a href="Hawaii_Home.html">HOME</a></li>
+                <li><a href="Oahu.html">Oahu</a></li>
+                <li><a href="Bigisland.html">BigIsland</a></li>
+                <li><a href="OtherIslands.html">Other Island</a></li>
+                <li class="active"><a href="Gallery.html">Gallery</a></li>
+                </ul>
+            </div>
+        </header>
+        <main>
+            <section class="top">
+                <div class="text-box">
+                    <h2>Gallery</h2>
+                    <p>
+                    <br>
+                    このページでは、私が実際に訪れた際に撮影したハワイの写真を紹介します。
+                    </p>
+                    </div>
+                <div class="gallery">
+                <a href="image/image1_big.JPEG">
+                    <img src="image/image1.JPEG" alt="ハワイの風景">
+                </a>
+                </div>
+            </section>
+
+            <section class="island-overview">
+                <div class="gallery">
+                <li><a href="image/image2_big.JPG"><img width="900px" src="image/image2.JPG"></a></li>
+                <li><a href="image/image3_big.JPG"><img width="900px" src="image/image3.JPG"></a></li>
+                <li><a href="image/image4_big.JPEG"><img width="900px" src="image/image4.JPEG"></a></li>
+                <li><a href="image/image5_big.JPEG"><img width="900px" src="image/image5.JPEG"></a></li>
+                <li><a href="image/image6_big.JPEG"><img width="900px" src="image/image6.JPEG"></a></li>
+                <li><a href="image/image7_big.JPEG"><img width="900px" src="image/image7.JPEG"></a></li>
+                <li><a href="image/image8_big.JPEG"><img width="900px" src="image/image8.JPEG"></a></li>
+                <li><a href="image/image9_big.JPEG"><img width="900px" src="image/image9.JPEG"></a></li>
+                <li><a href="image/image10_big.JPEG"><img width="900px" src="image/image10.JPEG"></a></li>
+                <li><a href="image/image11_big.JPEG"><img width="900px" src="image/image11.JPEG"></a></li>
+                <li><a href="image/image12_big.JPEG"><img width="900px" src="image/image12.JPEG"></a></li>
+                <li><a href="image/image13_big.JPEG"><img width="900px" src="image/image13.JPEG"></a></li>
+                <li><a href="image/image14_big.JPEG"><img width="900px" src="image/image14.JPEG"></a></li>
+                <li><a href="image/image15_big.JPEG"><img width="900px" src="image/image15.JPEG"></a></li>
+                <li><a href="image/image16_big.JPEG"><img width="900px" src="image/image16.JPEG"></a></li>
+                </div>
+            </section>
+
+            <div id="cover"></div>
+            <div id="largeImg"><img width="550" src="image/header.JPEG"></div>
+        </main>
+
+        <script src="jquery.js"></script>
+                <script>
+        /* 画像拡大 */
+        $('.gallery a').on('click', function(e){
+        e.preventDefault();
+
+        $('#cover').css({
+            position:'fixed',
+            left:0, top:0,
+            width:'100%', height:'100%'
+        }).show();
+
+        $('#largeImg').css({
+            position:'fixed',
+            left:'50%',
+            top:'50%',
+            transform:'translate(-50%, -50%)'
+        }).html('<img src="'+$(this).attr('href')+'" width="600">')
+            .fadeIn('slow');
+        });
+
+        /* 閉じる */
+        $('#cover, #largeImg').on('click', function(){
+        $('#largeImg').fadeOut().empty();
+        $('#cover').hide();
+        });
+        </script>
+        <footer class="container" id="footer">
+            <small>&copy; 2025 About Hawaii</small>
+        </footer>  
+    </body>
+</html>
